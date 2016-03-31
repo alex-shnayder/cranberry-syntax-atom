@@ -1,0 +1,63 @@
+.source.css,
+.source.sass,
+.source.scss,
+.source.less,
+.source.stylus {
+  .selector {
+    color: @_selector-other;
+  }
+
+  .entity {
+    color: @_selector-other;
+
+    &.tag {
+      color: @_selector-tag;
+
+      &.reference {
+        color: @_selector-other;
+      }
+    }
+
+    &.class {
+      color: @_selector-class;
+    }
+
+    &.id {
+      color: @_selector-id;
+    }
+
+    &.pseudo-class,
+    &.pseudo-element {
+      color: @_selector-pseudo;
+    }
+
+    .punctuation {
+      color: inherit;
+    }
+  }
+
+  // Attribute selectors
+  .attribute-selector > .entity.attribute-name {
+    color: @_selector-class;
+  }
+
+  .keyword {
+    &.elements {
+      color: @_selector-tag;
+    }
+
+    &.important {
+      color: @_important;
+    }
+  }
+
+  // :not(media) is for the cases like `transition: color 0.1s`
+  // where `color` is recognized as property-name
+  .property-name:not(.media) {
+    color: @_property;
+  }
+
+  .property-value {
+    color: @_value;
+  }
+}

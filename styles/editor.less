@@ -1,0 +1,71 @@
+atom-text-editor, :host {
+  background-color: @_background;
+  color: @_text;
+
+  .wrap-guide {
+    background-color: @_invisible;
+  }
+
+  .indent-guide {
+    color: @_invisible;
+  }
+
+  .invisible-character {
+    color: @_invisible;
+  }
+
+  .gutter {
+    background-color: @_gutter-background;
+    color: @_gutter-text;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @_gutter-background-selected;
+        color: @_gutter-text-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @_gutter-text-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @_text;
+  }
+
+  .invisible {
+    color: @_invisible;
+  }
+
+  .cursor {
+    color: @_cursor;
+  }
+
+  .cursor-line {
+    background: @_selection-muted;
+  }
+}
+
+atom-text-editor::shadow {
+  .selection .region {
+    background-color: @_selection;
+  }
+
+  .bracket-matcher .region {
+    color: @_marker;
+    border: 1px solid;
+  }
+}
+
+atom-text-editor .find-result .region,
+:host .find-result .region {
+  border: 1px solid @_marker !important;
+}
+
+atom-text-editor .find-result .current-result .region,
+:host .find-result .current-result .region {
+  border: 1px solid @_marker;
+}

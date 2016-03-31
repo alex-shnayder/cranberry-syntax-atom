@@ -1,0 +1,92 @@
+// Variables specific to the theme. Do not use in a package!
+
+
+@_white: hsl(48, 86%, 94%);
+@_light: #fbf1c7;
+@_dark: hsl(30, 7%, 11%);
+@_half-dark: hsl(27, 10%, 48%);
+@_brown: hsl(20, 17%, 20%);
+@_red: hsl(5, 84%, 63%);
+@_orange: hsl(32, 84%, 65%);
+@_green: hsl(133, 50%, 58%);
+@_teal: hsl(148, 55%, 67%);
+@_blue: hsl(198, 58%, 63%);
+@_light-blue: hsl(180, 40%, 61%);
+@_steel: hsl(192, 40%, 80%);
+@_crimson: hsl(346, 74%, 64%);
+
+
+// Editor background
+@_background: @_dark;
+
+// Main text
+@_text: @_light;
+
+// Comments
+@_comment: @_half-dark;
+
+// Selected text
+@_selection: @_brown;
+
+// Current line
+@_selection-muted: fadeout(@_selection, 70%);
+
+// Cursors
+@_cursor: @_white;
+
+// Markers like find results and matching brackets
+@_marker: @_crimson;
+
+// Guides and invisible characters
+@_invisible: fadeout(@_comment, 80%);
+
+// Snippets
+@_snippet: @_orange;
+
+// Gutter
+@_gutter-background: @_background;
+@_gutter-background-selected: @_selection-muted;
+@_gutter-text: @_half-dark;
+@_gutter-text-selected: @_half-dark;
+
+// Diffs
+@_added: @_green;
+@_modified: @_orange;
+@_renamed: @_orange;
+@_removed: @_red;
+
+// Invalid stuff
+@_error: @_red;
+@_warning: @_orange;
+@_success: @_green;
+
+// Language entities
+@_punctuation: fadeout(@_text, 22%);
+@_string: @_green;
+@_regexp: @_constant;
+@_constant: @_teal; // Numbers, colors, booleans, etc.
+@_unit: fadeout(@_constant, 28%); // E.g.: %, px
+@_variable: @_red;
+@_variable-secondary: lighten(@_variable, 6%); // Interpolated and being-assigned vars
+@_variable-property: @_text; // Object properties like bar in $foo->bar
+@_argument: desaturate(darken(@_red, 3%), 5%);
+@_property: @_orange;
+@_value: @_text;
+@_heading: @_blue; // Headings in markup
+@_class: @_text;
+@_inherited-class: @_text; // Super/base classes
+@_keyword: @_blue;
+@_import: @_crimson;
+@_operator: @_steel;
+@_function: @_text; // Function declarations
+@_storage: @_keyword; // Keywords like var, function, and access modifiers
+@_tag: @_red;
+@_tag-brackets: desaturate(@_attribute, 20%);
+@_attribute: @_property;
+@_at-rule: @_crimson;
+@_important: @_crimson;
+@_selector-id: saturate(lighten(@_selector-class, 9%), 22%);
+@_selector-class: @_blue;
+@_selector-tag: desaturate(darken(@_selector-class, 10%), 20%);
+@_selector-pseudo: @_light-blue;
+@_selector-other: @_steel; // E.g.: parent selector (&)
