@@ -6,22 +6,35 @@
     color: @_property;
   }
 
+  // Object properties that contain functions
+  // should not be colored as function names
+  .meta.function.json .string,
+  .meta.function.json .function.name:not(.mutator) {
+    color: @_property;
+  }
+
   // Import, export, module.exports
   .support.module,
   .support.module .keyword {
     color: @_import;
   }
 
-  // Object properties that contain functions
-  // should not be colored as function names
-  .function.json > .string,
-  .function.name:not(.mutator) {
-    color: @_property;
-  }
-
   .function-call > .entity.function.name,
   .storage.function ~ .entity.function.name,
   .object.key ~ .function > .name {
     color: @_function;
+  }
+
+  .accessor + .entity.function.name {
+    color: @_text;
+  }
+
+  .meta.function.js:not(.json) > .entity.name.function:first-child,
+  .entity.name.class {
+    color: @_variable;
+  }
+
+  .meta.class + .entity.name.class {
+    color: @_class;
   }
 }
